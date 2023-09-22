@@ -16,7 +16,7 @@ public class SeleniumTestExample {
 
 
         // Zatvoranje pretrazivaca nakon sto se zavrsi testiranje
-        driver.quit();
+//        driver.quit();
     }
 }
 
