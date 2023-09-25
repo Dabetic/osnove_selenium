@@ -1,4 +1,4 @@
-package org.example;
+package org.example.p22_09_2023;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -15,8 +15,9 @@ public class SeleniumTestExample {
         // Mesto za test kod ...
 
 
-        // Zatvoranje pretrazivaca nakon sto se zavrsi testiranje
-//        driver.quit();
+//         Zatvoranje pretrazivaca nakon sto se zavrsi testiranje
+        driver.quit();
     }
 }
+
 
