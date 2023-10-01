@@ -1,5 +1,10 @@
 package d26_09_2023;
 
+//Napisati program koji:
+//●	Ucitava stranicu https://s.bootsnipp.com/iframe/Dq2X
+//●	Klikce na svaki iks da ugasi obavestenje i proverava da li se nakon klika element obrisao sa stranice i ispisuje odgovarajuce poruke (OVO JE POTREBNO RESITI PETLJOM)
+//●	POMOC: Brisite elemente odozdo.
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,9 +29,9 @@ public class Zadatak2 {
 
             nizAlertsAfter.get(i).click();
             Thread.sleep(1000);
-            WebElement isDisplayed = driver.findElement(By.cssSelector("div.alert-dismissable:nth-child("+(i)+")"));
+            List<WebElement> isDisplayed = driver.findElements(By.cssSelector("div.alert-dismissable:nth-child("+(i + 1)+")"));
 
-            if(isDisplayed != null){
+            if(isDisplayed.isEmpty()){
                 System.out.println("Alert is closed");
             } else {
                 System.out.println("Still visible");

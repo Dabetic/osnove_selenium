@@ -1,5 +1,11 @@
 package d26_09_2023;
 
+//Napisati program koji:
+//●	Ucitava stranicu https://demoqa.com/automation-practice-form
+//●	Popunjava formu sta stranice. Korisnik unosi podatke sa tastature za popunu forme.
+//●	(za vezbanje) Probajte da unese i datum. Sa datumom se radi isto kao i sa obicnim inputom sa sendKeys.
+//●	Klik na submit
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +39,7 @@ public class Zadatak1 {
         System.out.println("Unesite predmet");
         String predmet = s.next();
 
-        System.out.println("Unesite hobi");
+        System.out.println("Unesite hobi: sport, citanje, muzika");
         String hobi = s.next();
 
         System.out.println("Unesite adresu");
