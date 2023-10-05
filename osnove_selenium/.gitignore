@@ -11,6 +11,13 @@ target/
 *.iws
 *.iml
 *.ipr
+screenshots/
+downloads/
+picturesToUpload/
+itbootcamp_slider/
+java/vezba/
+
+
 
 ### Eclipse ###
 .apt_generated

@@ -22,7 +22,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Zadatak1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -41,11 +41,17 @@ public class Zadatak1 {
         select.selectByValue("2000");
 
         WebElement scrolledDown = driver.findElement(By.cssSelector("#infinite-scroll-container div:nth-child(5)"));
+//        WebElement scrolledDown = driver.findElement(By.cssSelector("#infinite-scroll-container .item:nth-child(1)"));
+
 
         Actions actions = new Actions(driver);
         actions.scrollToElement(scrolledDown);
 
-        wait.withMessage("Button isn't clickable").until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#infinite-scroll-button"))).click();
+        Thread.sleep(5000);
+
+//        wait.withMessage("Button isn't clickable").until(ExpectedConditions.elementToBeClickable(By.cssSelector("#infinite-scroll-button"))).click();
+
+        driver.quit();
 
     }
 }

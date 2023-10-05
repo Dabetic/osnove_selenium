@@ -34,7 +34,9 @@ public class Zadatak6 {
         driver.findElement(By.id("basic-success-trigger")).click();
         driver.findElement(By.id("basic-danger-trigger")).click();
 
-        wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector(".me-auto"),4));
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector(".toast.show"),5));
+
+        System.out.println("Toasts su se izgubili");
 
         driver.quit();
 

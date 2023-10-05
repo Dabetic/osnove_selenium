@@ -26,10 +26,17 @@ public class Zadatak5 {
 
         driver.get("http://seleniumdemo.com/?s=BDD+Cucumber");
 
-        driver.findElement(By.cssSelector("[data-toggle='czr-dropdown']")).click();
-        driver.findElement(By.cssSelector("[data-toggle='czr-dropdown']")).click();
+        driver.findElement(By.cssSelector(".nav__woocart")).click();
+        driver.findElement(By.cssSelector(".nav.utils.flex-row .icn-shoppingcart")).click();
+        Thread.sleep(2000);
 
-        wait.until(ExpectedConditions.textToBe(By.className("cart-empty"),"Your cart is currently empty."));
+        wait.
+                withMessage("Tekst ne postoji").
+                until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector("#page-5"), "Your cart is currently empty."));
+
+        System.out.println("Text postoji");
+
+        driver.quit();
 
     }
 }

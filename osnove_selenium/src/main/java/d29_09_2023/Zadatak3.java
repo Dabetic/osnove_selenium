@@ -62,6 +62,7 @@ public class Zadatak3 {
         .sendKeys("k")
         .perform();
 
+
         wait.
                 withMessage("Value of the attribute is not search ")
                 .until(ExpectedConditions.attributeToBe(By.cssSelector("[type='search']"),"type" , "search"));

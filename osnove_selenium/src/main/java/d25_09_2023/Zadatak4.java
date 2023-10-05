@@ -18,10 +18,7 @@ package d25_09_2023;
 //●	Zatvorite pretrazivac
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
@@ -37,6 +34,13 @@ public class Zadatak4 {
         driver.get("https://www.artplayer.org/");
 
         Thread.sleep(3000);
+
+        new Actions(driver)
+                .keyDown(Keys.CONTROL)
+                .sendKeys("f")
+                .perform();
+
+        Thread.sleep(1000);
 
         driver.findElement(By.cssSelector("i[aria-label='Play']")).click();
 
