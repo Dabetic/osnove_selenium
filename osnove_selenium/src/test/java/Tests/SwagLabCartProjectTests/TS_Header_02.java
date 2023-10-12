@@ -50,4 +50,12 @@ public class TS_Header_02 extends BasicTest {
         addToCartPage.waitForHamburgerMenuToBeVisible();
     }
 
+    @Test(priority = 7, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheCartIconIsWorking () {
+        addToCartPage.getShoppingCartBtn().click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://www.saucedemo.com/cart.html",
+                "Cart icon isn't working");
+    }
+
 }
