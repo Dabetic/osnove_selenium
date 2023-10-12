@@ -18,7 +18,7 @@ public class TS_Item_List_05 extends BasicTest {
     }
 
     @Test
-            (priority = 1, retryAnalyzer = SwagLabRetry.class)
+            (priority = 2, retryAnalyzer = SwagLabRetry.class)
     public void verifyIfTheItemsTitleIsVisible() {
         addToCartPage.getAddToCartBackpackBtn().click();
         itemListPage.getAddToCartBoltTShirt().click();
@@ -32,7 +32,14 @@ public class TS_Item_List_05 extends BasicTest {
 
     }
 
-
-
+    @Test
+            (priority = 3, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheItemsDescriptionIsPresented() {
+        addToCartPage.getAddToCartBackpackBtn().click();
+        itemListPage.getAddToCartBoltTShirt().click();
+        addToCartPage.getShoppingCartBtn().click();
+        itemListPage.getInvertoryBoltTShirtDesc().isDisplayed();
+        itemListPage.getInvertoryBackpackDesc().isDisplayed();
+    }
 
 }
