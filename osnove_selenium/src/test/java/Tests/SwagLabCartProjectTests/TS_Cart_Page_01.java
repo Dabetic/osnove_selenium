@@ -20,7 +20,7 @@ public class TS_Cart_Page_01 extends BasicTest {
         addToCartPage.getShoppingCartBtn().click();
         Assert.assertEquals(driver.getTitle(),
                 "Swag Labs",
-                "URL doesn't match expected URL");
+                "URL doesn't match expected title");
     }
 
 
