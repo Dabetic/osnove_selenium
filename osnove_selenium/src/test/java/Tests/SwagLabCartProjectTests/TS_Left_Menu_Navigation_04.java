@@ -37,5 +37,32 @@ public class TS_Left_Menu_Navigation_04 extends BasicTest {
                 "Actual text doesn't match expected text");
     }
 
+    @Test(priority = 3, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfAllItemsOptionIsWorking () {
+
+        addToCartPage.getShoppingCartBtn().click();
+        addToCartPage.getHamburgerMenuBtn().click();
+        addToCartPage.waitForHamburgerMenuToBeVisible();
+        addToCartPage.getAllItemsMenuOption().click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://www.saucedemo.com/inventory.html",
+                "URL doesn't match expected URL");
+    }
+
+    @Test(priority = 4, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfAboutOptionIsWorking () {
+
+        addToCartPage.getShoppingCartBtn().click();
+        addToCartPage.getHamburgerMenuBtn().click();
+        addToCartPage.waitForHamburgerMenuToBeVisible();
+        addToCartPage.getAboutMenuOption().click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://saucelabs.com/",
+                "URL doesn't match expected URL");
+    }
+
+
+
+
 
 }
