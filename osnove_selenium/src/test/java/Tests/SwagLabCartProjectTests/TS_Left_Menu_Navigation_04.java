@@ -84,7 +84,26 @@ public class TS_Left_Menu_Navigation_04 extends BasicTest {
         driver.navigate().refresh();
         Assert.assertEquals(addToCartPage.getProductsAddedToTheCart().size(),
                 0,
-                "Number of products is in cart is different form the added products");
+                "Number of products is in cart is different form the number of added products");
+    }
+
+    @Test(priority = 6, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheExitButtonIsPresented () {
+
+        addToCartPage.getShoppingCartBtn().click();
+        addToCartPage.getHamburgerMenuBtn().click();
+        addToCartPage.waitForHamburgerMenuToBeVisible();
+        addToCartPage.presenceOfTheExitBtn();
+    }
+
+    @Test(priority = 7, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheExitButtonIsWorking () {
+
+        addToCartPage.getShoppingCartBtn().click();
+        addToCartPage.getHamburgerMenuBtn().click();
+        addToCartPage.waitForHamburgerMenuToBeVisible();
+        addToCartPage.getExitBtn().click();
+        addToCartPage.waitForHamburgerMenuToBeInvisible();
     }
 
 
