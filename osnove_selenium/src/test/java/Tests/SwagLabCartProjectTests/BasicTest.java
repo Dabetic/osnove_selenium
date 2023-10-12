@@ -1,9 +1,8 @@
-package Tests.SwagLabProjectTests;
+package Tests.SwagLabCartProjectTests;
 
-import SwagLabProject.Pages.BasicPage;
-import SwagLabProject.Pages.LoginPage;
+import SwagLabCartProject.Pages.AddToCartPage;
+import SwagLabCartProject.Pages.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,6 +19,10 @@ public class BasicTest {
     protected WebDriverWait wait;
     protected String baseUrl = "https://www.saucedemo.com/";
 
+    protected LoginPage loginPage;
+
+    protected AddToCartPage addToCartPage;
+
 
 
     @BeforeClass
@@ -29,15 +32,17 @@ public class BasicTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        loginPage = new LoginPage(driver,wait);
+        addToCartPage = new AddToCartPage(driver,wait);
     }
 
     @BeforeMethod
     public void beforeMethod() {
+        String username = "standard_user";
+        String password = "secret_sauce";
         driver.navigate().to(baseUrl);
-        driver.findElement(By.cssSelector("#user-name")).sendKeys("standard_user");
-        driver.findElement(By.cssSelector("#password")).sendKeys("secret_sauce");
-        driver.findElement(By.cssSelector("#login-button")).click();
-        driver.findElement(By.cssSelector(".shopping_cart_link")).click();
+        loginPage.addAndClearCredentials(username,password);
+        loginPage.clickOnTheLoginBtn();
     }
 
     @AfterMethod

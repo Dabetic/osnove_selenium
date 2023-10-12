@@ -1,4 +1,4 @@
-package SwagLabProject.Retry;
+package SwagLabCartProject.Retry;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
