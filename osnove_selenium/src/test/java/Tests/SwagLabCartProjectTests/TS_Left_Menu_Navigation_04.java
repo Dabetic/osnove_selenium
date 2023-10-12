@@ -76,7 +76,7 @@ public class TS_Left_Menu_Navigation_04 extends BasicTest {
     @Test(priority = 5, retryAnalyzer = SwagLabRetry.class)
     public void verifyIfResetOptionIsWorking () {
 
-        addToCartPage.getAddToCartBtn().click();
+        addToCartPage.getAddToCartBackpackBtn().click();
         addToCartPage.getShoppingCartBtn().click();
         addToCartPage.getHamburgerMenuBtn().click();
         addToCartPage.waitForHamburgerMenuToBeVisible();

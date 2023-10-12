@@ -1,6 +1,7 @@
 package Tests.SwagLabCartProjectTests;
 
 import SwagLabCartProject.Pages.AddToCartPage;
+import SwagLabCartProject.Pages.ItemListPage;
 import SwagLabCartProject.Pages.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -20,8 +21,8 @@ public class BasicTest {
     protected String baseUrl = "https://www.saucedemo.com/";
 
     protected LoginPage loginPage;
-
     protected AddToCartPage addToCartPage;
+    protected ItemListPage itemListPage;
 
 
 
@@ -34,6 +35,7 @@ public class BasicTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         loginPage = new LoginPage(driver,wait);
         addToCartPage = new AddToCartPage(driver,wait);
+        itemListPage = new ItemListPage(driver, wait);
     }
 
     @BeforeMethod

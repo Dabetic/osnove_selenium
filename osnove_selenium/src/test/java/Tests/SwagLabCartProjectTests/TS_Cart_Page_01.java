@@ -16,7 +16,7 @@ public class TS_Cart_Page_01 extends BasicTest {
 
     @Test (priority = 2, retryAnalyzer = SwagLabRetry.class)
     public void verifyTheTitlePage () {
-        addToCartPage.getAddToCartBtn().click();
+        addToCartPage.getAddToCartBackpackBtn().click();
         addToCartPage.getShoppingCartBtn().click();
         Assert.assertEquals(driver.getTitle(),
                 "Swag Labs",
