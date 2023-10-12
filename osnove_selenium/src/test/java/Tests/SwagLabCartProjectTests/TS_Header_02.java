@@ -1,6 +1,7 @@
 package Tests.SwagLabCartProjectTests;
 
 import SwagLabCartProject.Retry.SwagLabRetry;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -56,6 +57,16 @@ public class TS_Header_02 extends BasicTest {
         Assert.assertEquals(driver.getCurrentUrl(),
                 "https://www.saucedemo.com/cart.html",
                 "Cart icon isn't working");
+    }
+
+    @Test(priority = 8, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheCartIconHasCorrectNumberOfAddedItems () {
+        addToCartPage.getAddToCartBtn().click();
+        addToCartPage.getShoppingCartBtn().click();
+       Assert.assertEquals(addToCartPage.getProductsAddedToTheCart().size(),
+               1,
+               "Number of products is in cart is different form the added products");
+
     }
 
 }

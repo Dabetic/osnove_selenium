@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class AddToCartPage extends BasicPage {
     public AddToCartPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
@@ -56,6 +58,9 @@ public class AddToCartPage extends BasicPage {
                 (ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[aria-hidden='false']")));
     }
 
+   public List<WebElement> getProductsAddedToTheCart() {
+        return driver.findElements(By.cssSelector("div.cart_item"));
+   }
 
 
 }
