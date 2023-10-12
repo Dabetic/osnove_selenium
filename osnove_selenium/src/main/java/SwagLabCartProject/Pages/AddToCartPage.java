@@ -62,5 +62,12 @@ public class AddToCartPage extends BasicPage {
         return driver.findElements(By.cssSelector("div.cart_item"));
    }
 
+   public WebElement getSubHeaderElement () {
+        return driver.findElement(By.cssSelector(".header_secondary_container"));
+   }
+
+   public List<WebElement> getNumberOfMenuOptions () {
+        return driver.findElements(By.cssSelector(".bm-item"));
+   }
 
 }

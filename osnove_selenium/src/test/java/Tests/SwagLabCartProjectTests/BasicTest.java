@@ -38,6 +38,7 @@ public class BasicTest {
 
     @BeforeMethod
     public void beforeMethod() {
+        driver.manage().deleteAllCookies();
         String username = "standard_user";
         String password = "secret_sauce";
         driver.navigate().to(baseUrl);
