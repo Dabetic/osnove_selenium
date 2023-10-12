@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class TS_Header_02 extends BasicTest {
 
     @Test(priority = 1, retryAnalyzer = SwagLabRetry.class)
-    public void verifyTheUrl () {
+    public void verifyTheTitleInHeader () {
         addToCartPage.getShoppingCartBtn().click();
         Assert.assertEquals(addToCartPage.getHeaderElement().getText(),
                 "Your Cart",
