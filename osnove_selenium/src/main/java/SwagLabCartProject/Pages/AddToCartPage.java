@@ -33,12 +33,23 @@ public class AddToCartPage extends BasicPage {
                         (By.cssSelector("#react-burger-menu-btn")));
     }
 
+    public WebElement getCartIcon () {
+        return driver.findElement(By.cssSelector(".shopping_cart_link"));
+    }
+
     public void presenceOfCartIcon () {
         wait.withMessage("Icon isn't present").
                 until(ExpectedConditions.presenceOfElementLocated
                         (By.cssSelector(".shopping_cart_link")));
     }
 
+    public boolean isHamburgerMenuBtnEnabled () {
+       return this.getHamburgerMenuBtn().isEnabled();
+    }
+
+    public boolean isCartIconIsEnabled () {
+        return this.getCartIcon().isEnabled();
+    }
 
 
 

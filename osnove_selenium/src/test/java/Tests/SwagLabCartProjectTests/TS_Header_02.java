@@ -20,6 +20,7 @@ public class TS_Header_02 extends BasicTest {
     public void verifyIfTheHamburgerMenuButtonIsPresented () {
         addToCartPage.getShoppingCartBtn().click();
         addToCartPage.presenceOfTheHamburgerMenyBtn();
+
     }
 
     @Test(priority = 3, retryAnalyzer = SwagLabRetry.class)
@@ -28,5 +29,18 @@ public class TS_Header_02 extends BasicTest {
         addToCartPage.presenceOfCartIcon();
     }
 
+    @Test(priority = 4, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheHamburgerMenuButtonIsEnabled () {
+        addToCartPage.getShoppingCartBtn().click();
+        addToCartPage.presenceOfTheHamburgerMenyBtn();
+        Assert.assertTrue(addToCartPage.isHamburgerMenuBtnEnabled(),
+                "Button isn't enabled");
+    }
+    @Test(priority = 5, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfCartIconIsEnabled () {
+        addToCartPage.getShoppingCartBtn().click();
+        Assert.assertTrue(addToCartPage.isCartIconIsEnabled(),
+                "Icon isn't enabled");
+    }
 
 }
