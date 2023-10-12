@@ -18,11 +18,19 @@ public class Zadatak1 {
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 
+        long start = System.currentTimeMillis();
         driver.get("https://s.bootsnipp.com/iframe/klDWV");
+
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         wait.withMessage("Stranica se nije ucitala").until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class = 'container']//*[contains (text(), '100%')]")));
+        long finish = System.currentTimeMillis();
+
+        long totalTime = finish - start;
+
+        System.out.println("Total Time for page load - " + totalTime + " millis");
+
 
         System.out.println("KRAJ");
 

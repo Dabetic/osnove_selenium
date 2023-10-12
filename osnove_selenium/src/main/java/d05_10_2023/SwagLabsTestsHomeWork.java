@@ -114,7 +114,7 @@ public class SwagLabsTestsHomeWork {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".inventory_details_desc_container")));
     }
 
-    @Test(priority = 8)
+    @Test(priority = 8, retryAnalyzer = SwagLabsRetry.class)
     public void removingProductsFromCart() throws InterruptedException {
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
@@ -173,7 +173,7 @@ public class SwagLabsTestsHomeWork {
 
     }
 
-    @Test(priority = 10)
+    @Test(priority = 10, retryAnalyzer = SwagLabsRetry.class)
     public void validateSocialLinksInFooter() throws IOException {
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
