@@ -10,7 +10,7 @@ public class TS_Header_02 extends BasicTest {
     public void verifyTheTitleInHeader () {
         addToCartPage.getShoppingCartBtn().click();
         Assert.assertEquals(addToCartPage.getHeaderElement().getText(),
-                "Your Cart",
+                "Swag Labs",
                 "Header title doesn't match expected header title");
     }
 

@@ -19,7 +19,7 @@ public class AddToCartPage extends BasicPage {
     }
 
     public WebElement getHeaderElement () {
-        return driver.findElement(By.cssSelector(".header_secondary_container"));
+        return driver.findElement(By.cssSelector(".header_label"));
     }
 
 
