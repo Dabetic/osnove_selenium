@@ -12,6 +12,17 @@ public class TS_Item_List_05 extends BasicTest {
         addToCartPage.getAddToCartBackpackBtn().click();
         itemListPage.getAddToCartBoltTShirt().click();
         addToCartPage.getShoppingCartBtn().click();
+        Assert.assertEquals(addToCartPage.getProductsAddedToTheCart().size(),
+                2,
+                "Items aren't present");
+    }
+
+    @Test
+            (priority = 1, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheItemsTitleIsVisible() {
+        addToCartPage.getAddToCartBackpackBtn().click();
+        itemListPage.getAddToCartBoltTShirt().click();
+        addToCartPage.getShoppingCartBtn().click();
         Assert.assertEquals(itemListPage.getInventoryIntemBackpack().getText(),
                 "Sauce Labs Backpack",
                 "Actual item desc doesn't match expected item desc");
