@@ -18,5 +18,9 @@ public class AddToCartPage extends BasicPage {
         return driver.findElement(By.cssSelector("#add-to-cart-sauce-labs-backpack"));
     }
 
+    public WebElement getHeaderElement () {
+        return driver.findElement(By.cssSelector(".header_secondary_container"));
+    }
+
 
 }
