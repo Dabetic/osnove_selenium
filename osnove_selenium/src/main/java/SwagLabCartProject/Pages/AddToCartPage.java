@@ -28,7 +28,15 @@ public class AddToCartPage extends BasicPage {
     }
 
     public void presenceOfTheHamburgerMenyBtn () {
-        wait.withMessage("Element isn't present").until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#react-burger-menu-btn")));
+        wait.withMessage("Element isn't present").
+                until(ExpectedConditions.presenceOfElementLocated
+                        (By.cssSelector("#react-burger-menu-btn")));
+    }
+
+    public void presenceOfCartIcon () {
+        wait.withMessage("Icon isn't present").
+                until(ExpectedConditions.presenceOfElementLocated
+                        (By.cssSelector(".shopping_cart_link")));
     }
 
 

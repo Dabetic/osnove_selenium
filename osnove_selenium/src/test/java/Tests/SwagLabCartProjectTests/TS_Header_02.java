@@ -16,12 +16,17 @@ public class TS_Header_02 extends BasicTest {
     }
 
 
-    @Test(priority = 1, retryAnalyzer = SwagLabRetry.class)
+    @Test(priority = 2, retryAnalyzer = SwagLabRetry.class)
     public void verifyIfTheHamburgerMenuButtonIsPresented () {
         addToCartPage.getShoppingCartBtn().click();
         addToCartPage.presenceOfTheHamburgerMenyBtn();
     }
 
+    @Test(priority = 3, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfCartIconIsPresented () {
+        addToCartPage.getShoppingCartBtn().click();
+        addToCartPage.presenceOfCartIcon();
+    }
 
 
 }
