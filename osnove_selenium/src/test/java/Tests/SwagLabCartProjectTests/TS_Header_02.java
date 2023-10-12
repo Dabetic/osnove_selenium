@@ -43,4 +43,11 @@ public class TS_Header_02 extends BasicTest {
                 "Icon isn't enabled");
     }
 
+    @Test(priority = 6, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheHamburgerButtonIsWorking () {
+        addToCartPage.getShoppingCartBtn().click();
+        addToCartPage.getHamburgerMenuBtn().click();
+        addToCartPage.waitForHamburgerMenuToBeVisible();
+    }
+
 }

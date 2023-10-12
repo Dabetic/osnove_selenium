@@ -51,6 +51,11 @@ public class AddToCartPage extends BasicPage {
         return this.getCartIcon().isEnabled();
     }
 
+    public void waitForHamburgerMenuToBeVisible () {
+        wait.withMessage("Menu should be visible").until
+                (ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[aria-hidden='false']")));
+    }
+
 
 
 }
