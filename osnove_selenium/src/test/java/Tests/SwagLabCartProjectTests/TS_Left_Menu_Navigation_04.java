@@ -61,6 +61,32 @@ public class TS_Left_Menu_Navigation_04 extends BasicTest {
                 "URL doesn't match expected URL");
     }
 
+    @Test(priority = 5, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfLogOutOptionIsWorking () {
+
+        addToCartPage.getShoppingCartBtn().click();
+        addToCartPage.getHamburgerMenuBtn().click();
+        addToCartPage.waitForHamburgerMenuToBeVisible();
+        addToCartPage.getLogOutMenuOption().click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://www.saucedemo.com/",
+                "URL doesn't match expected URL");
+    }
+
+    @Test(priority = 5, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfResetOptionIsWorking () {
+
+        addToCartPage.getAddToCartBtn().click();
+        addToCartPage.getShoppingCartBtn().click();
+        addToCartPage.getHamburgerMenuBtn().click();
+        addToCartPage.waitForHamburgerMenuToBeVisible();
+        addToCartPage.getResetMenuOption().click();
+        driver.navigate().refresh();
+        Assert.assertEquals(addToCartPage.getProductsAddedToTheCart().size(),
+                0,
+                "Number of products is in cart is different form the added products");
+    }
+
 
 
 
