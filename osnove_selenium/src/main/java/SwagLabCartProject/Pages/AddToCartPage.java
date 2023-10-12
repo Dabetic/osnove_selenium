@@ -70,4 +70,19 @@ public class AddToCartPage extends BasicPage {
         return driver.findElements(By.cssSelector(".bm-item"));
    }
 
+   public WebElement getAllItemsMenuOption () {
+        return driver.findElement(By.cssSelector("#inventory_sidebar_link"));
+   }
+    public WebElement getAboutMenuOption () {
+        return driver.findElement(By.cssSelector("#about_sidebar_link"));
+    }
+
+    public WebElement getLogOutMenuOption () {
+        return driver.findElement(By.cssSelector("#logout_sidebar_link"));
+    }
+
+    public WebElement getResetMenuOption () {
+        return driver.findElement(By.cssSelector("#reset_sidebar_link"));
+    }
+
 }
