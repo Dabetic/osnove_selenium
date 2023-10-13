@@ -31,7 +31,6 @@ public class TS_Item_List_05 extends BasicTest {
                 "Actual item desc doesn't match expected item desc");
 
     }
-
     @Test
             (priority = 3, retryAnalyzer = SwagLabRetry.class)
     public void verifyIfTheItemsDescriptionIsPresented() {
@@ -40,6 +39,18 @@ public class TS_Item_List_05 extends BasicTest {
         addToCartPage.getShoppingCartBtn().click();
         itemListPage.getInvertoryBoltTShirtDesc().isDisplayed();
         itemListPage.getInvertoryBackpackDesc().isDisplayed();
+    }
+
+    @Test
+            (priority = 4, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheItemsPriceIsPresented() {
+        addToCartPage.getAddToCartBackpackBtn().click();
+        itemListPage.getAddToCartBoltTShirt().click();
+        addToCartPage.getShoppingCartBtn().click();
+        Assert.assertEquals(itemListPage.getInvertoryBackpackPrice().getText(),
+                "$29.99",
+                "Actual price doesn't match expected price");
+
     }
 
 }

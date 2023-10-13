@@ -31,4 +31,8 @@ public class ItemListPage extends BasicPage{
         return driver.findElement(By.cssSelector("#item_4_title_link + .inventory_item_desc"));
     }
 
+    public WebElement getInvertoryBackpackPrice () {
+        return driver.findElement(By.cssSelector("#item_4_title_link ~ .item_pricebar>div"));
+    }
+
 }
