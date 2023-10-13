@@ -51,4 +51,8 @@ public class ItemListPage extends BasicPage{
         return driver.findElement(By.cssSelector("#item_1_title_link>.inventory_item_name"));
     }
 
+    public List <WebElement> getInventoryRemoveBtn () {
+        return driver.findElements(By.cssSelector(".btn_secondary.btn_small"));
+    }
+
 }

@@ -101,4 +101,17 @@ public class TS_Item_List_05 extends BasicTest {
                 "URL doesn't match expected URL");
     }
 
+    @Test
+            (priority = 7, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheRemoveButtonIsPresented () {
+
+        addToCartPage.getAddToCartBackpackBtn().click();
+        itemListPage.getAddToCartBoltTShirt().click();
+        addToCartPage.getShoppingCartBtn().click();
+        List<WebElement>removeButtons = itemListPage.getInventoryRemoveBtn();
+        for (int i = 0; i < removeButtons.size(); i++) {
+            removeButtons.get(i).isDisplayed();
+        }
+    }
+
 }
