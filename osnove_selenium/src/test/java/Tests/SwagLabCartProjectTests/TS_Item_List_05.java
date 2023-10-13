@@ -84,5 +84,21 @@ public class TS_Item_List_05 extends BasicTest {
                 until(ExpectedConditions.elementToBeClickable(itemListPage.getInventoryBlotShirtTitle()));
     }
 
+    @Test
+            (priority = 7, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheItemTitleIsWorking () {
+        addToCartPage.getAddToCartBackpackBtn().click();
+        itemListPage.getAddToCartBoltTShirt().click();
+        addToCartPage.getShoppingCartBtn().click();
+        itemListPage.getInvertoryBackpackTitle().click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://www.saucedemo.com/inventory-item.html?id=4",
+                "URL doesn't match expected URL");
+        driver.navigate().back();
+        itemListPage.getInventoryBlotShirtTitle().click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://www.saucedemo.com/inventory-item.html?id=1",
+                "URL doesn't match expected URL");
+    }
 
 }
