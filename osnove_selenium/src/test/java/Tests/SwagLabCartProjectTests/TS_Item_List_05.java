@@ -2,6 +2,7 @@ package Tests.SwagLabCartProjectTests;
 
 import SwagLabCartProject.Retry.SwagLabRetry;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -59,7 +60,7 @@ public class TS_Item_List_05 extends BasicTest {
     }
 
     @Test
-            (priority = 4, retryAnalyzer = SwagLabRetry.class)
+            (priority = 5, retryAnalyzer = SwagLabRetry.class)
     public void verifyIfTheQuantityOfItemIsPresented() {
         addToCartPage.getAddToCartBackpackBtn().click();
         itemListPage.getAddToCartBoltTShirt().click();
@@ -69,6 +70,18 @@ public class TS_Item_List_05 extends BasicTest {
             quantities.get(i).isDisplayed();
         }
 
+    }
+
+    @Test
+            (priority = 6, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheItemTitleIsClickable () {
+        addToCartPage.getAddToCartBackpackBtn().click();
+        itemListPage.getAddToCartBoltTShirt().click();
+        addToCartPage.getShoppingCartBtn().click();
+        wait.withMessage("Button isn't clickable").
+                until(ExpectedConditions.elementToBeClickable(itemListPage.getInvertoryBackpackTitle()));
+        wait.withMessage("Button isn't clickable").
+                until(ExpectedConditions.elementToBeClickable(itemListPage.getInventoryBlotShirtTitle()));
     }
 
 
