@@ -114,4 +114,22 @@ public class TS_Item_List_05 extends BasicTest {
         }
     }
 
+
+    @Test
+            (priority = 7, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheRemoveButtonIsWorking () {
+
+        addToCartPage.getAddToCartBackpackBtn().click();
+        itemListPage.getAddToCartBoltTShirt().click();
+        addToCartPage.getShoppingCartBtn().click();
+        List<WebElement>removeButtons = itemListPage.getInventoryRemoveBtn();
+        for (int i = 0; i < removeButtons.size(); i++) {
+            removeButtons.get(i).click();
+        }
+        Assert.assertEquals(addToCartPage.getProductsAddedToTheCart().size(),
+                0,
+                "Number of products is in cart is different form the added products");
+
+    }
+
 }
