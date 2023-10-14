@@ -21,5 +21,7 @@ public class FooterPage extends BasicPage {
         return driver.findElement(By.cssSelector("[href='https://www.linkedin.com/company/sauce-labs/']"));
     }
 
-
+    public void switchToNewWidnow () {
+        driver.getWindowHandles().forEach(tab->driver.switchTo().window(tab));
+    }
 }

@@ -1,6 +1,8 @@
 package Tests.SwagLabCartProjectTests;
 
 import SwagLabCartProject.Retry.SwagLabRetry;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TS_Footer_06 extends  BasicTest {
@@ -8,20 +10,31 @@ public class TS_Footer_06 extends  BasicTest {
     @Test (priority = 1, retryAnalyzer = SwagLabRetry.class)
     public void verifyIfTheTwitterButtonIsPresented () {
 
-        footerPage.getTwitterPage().isDisplayed();
+        Assert.assertTrue(footerPage.getTwitterPage().isDisplayed());
     }
 
     @Test (priority = 2, retryAnalyzer = SwagLabRetry.class)
     public void verifyIfTheFacebookButtonIsPresented () {
 
-        footerPage.getFacebookPage().isDisplayed();
+        Assert.assertTrue(footerPage.getFacebookPage().isDisplayed());
     }
 
     @Test (priority = 3, retryAnalyzer = SwagLabRetry.class)
     public void verifyIfTheLinkdinButtonIsPresented () {
 
-        footerPage.getLinkdinPage().isDisplayed();
+        Assert.assertTrue(footerPage.getLinkdinPage().isDisplayed());
     }
+
+    @Test (priority = 4, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheTwitterButtonIsWokring () {
+
+        footerPage.getTwitterPage().click();
+        footerPage.switchToNewWidnow();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://twitter.com/saucelabs",
+                "URL doesn't match expected URL");
+    }
+
 
 
 
