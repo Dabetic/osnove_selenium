@@ -164,7 +164,18 @@ public class TS_Item_List_05 extends BasicTest {
         addToCartPage.getShoppingCartBtn().click();
         itemListPage.getCheckOutBtn().isDisplayed();
     }
+    @Test
+            (priority = 11, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheCheckOutButtonIsWorking () {
 
+        addToCartPage.getAddToCartBackpackBtn().click();
+        itemListPage.getAddToCartBoltTShirt().click();
+        addToCartPage.getShoppingCartBtn().click();
+        itemListPage.getCheckOutBtn().click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                baseUrl + "checkout-step-one.html",
+                "URL doesn't match expected URL");
+    }
 
 
 
