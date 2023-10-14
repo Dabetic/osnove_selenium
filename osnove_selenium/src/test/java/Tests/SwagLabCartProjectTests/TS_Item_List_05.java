@@ -1,6 +1,7 @@
 package Tests.SwagLabCartProjectTests;
 
 import SwagLabCartProject.Retry.SwagLabRetry;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -139,6 +140,19 @@ public class TS_Item_List_05 extends BasicTest {
         itemListPage.getAddToCartBoltTShirt().click();
         addToCartPage.getShoppingCartBtn().click();
         itemListPage.getContinueShoping().isDisplayed();
+    }
+
+    @Test
+            (priority = 9, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheContinueShoppingButtonIsWorking () {
+
+        addToCartPage.getAddToCartBackpackBtn().click();
+        itemListPage.getAddToCartBoltTShirt().click();
+        addToCartPage.getShoppingCartBtn().click();
+        itemListPage.getContinueShoping().click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                baseUrl + "inventory.html",
+                "URL doesn't match expected URL");
     }
 
 
