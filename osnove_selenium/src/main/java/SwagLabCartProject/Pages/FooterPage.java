@@ -14,7 +14,12 @@ public class FooterPage extends BasicPage {
         return driver.findElement(By.cssSelector("[href='https://twitter.com/saucelabs']"));
     }
 
-
+    public WebElement getFacebookPage () {
+        return driver.findElement(By.cssSelector("[href='https://www.facebook.com/saucelabs']"));
+    }
+    public WebElement getLinkdinPage () {
+        return driver.findElement(By.cssSelector("[href='https://www.linkedin.com/company/sauce-labs/']"));
+    }
 
 
 }
