@@ -139,7 +139,7 @@ public class TS_Item_List_05 extends BasicTest {
         addToCartPage.getAddToCartBackpackBtn().click();
         itemListPage.getAddToCartBoltTShirt().click();
         addToCartPage.getShoppingCartBtn().click();
-        itemListPage.getContinueShoping().isDisplayed();
+        itemListPage.getContinueShopingBtn().isDisplayed();
     }
 
     @Test
@@ -149,11 +149,24 @@ public class TS_Item_List_05 extends BasicTest {
         addToCartPage.getAddToCartBackpackBtn().click();
         itemListPage.getAddToCartBoltTShirt().click();
         addToCartPage.getShoppingCartBtn().click();
-        itemListPage.getContinueShoping().click();
+        itemListPage.getContinueShopingBtn().click();
         Assert.assertEquals(driver.getCurrentUrl(),
                 baseUrl + "inventory.html",
                 "URL doesn't match expected URL");
     }
+
+    @Test
+            (priority = 10, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheCheckOutButtonIsPresented () {
+
+        addToCartPage.getAddToCartBackpackBtn().click();
+        itemListPage.getAddToCartBoltTShirt().click();
+        addToCartPage.getShoppingCartBtn().click();
+        itemListPage.getCheckOutBtn().isDisplayed();
+    }
+
+
+
 
 
 }
