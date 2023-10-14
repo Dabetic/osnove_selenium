@@ -54,5 +54,8 @@ public class ItemListPage extends BasicPage{
     public List <WebElement> getInventoryRemoveBtn () {
         return driver.findElements(By.cssSelector(".btn_secondary.btn_small"));
     }
+    public WebElement getContinueShoping () {
+        return driver.findElement(By.cssSelector("#continue-shopping"));
+    }
 
 }

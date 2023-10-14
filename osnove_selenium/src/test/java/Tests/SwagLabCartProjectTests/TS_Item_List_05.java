@@ -131,5 +131,15 @@ public class TS_Item_List_05 extends BasicTest {
                 "Number of products is in cart is different form the added products");
 
     }
+    @Test
+            (priority = 8, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheContinueShoppingButtonIsPresented () {
+
+        addToCartPage.getAddToCartBackpackBtn().click();
+        itemListPage.getAddToCartBoltTShirt().click();
+        addToCartPage.getShoppingCartBtn().click();
+        itemListPage.getContinueShoping().isDisplayed();
+    }
+
 
 }
