@@ -35,6 +35,16 @@ public class TS_Footer_06 extends  BasicTest {
                 "URL doesn't match expected URL");
     }
 
+    @Test (priority = 5, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheFacebookButtonIsWokring () {
+
+        footerPage.getFacebookPage().click();
+        footerPage.switchToNewWidnow();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://www.facebook.com/saucelabs",
+                "URL doesn't match expected URL");
+    }
+
 
 
 
