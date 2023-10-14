@@ -1,6 +1,7 @@
 package Tests.SwagLabCartProjectTests;
 
 import SwagLabCartProject.Pages.AddToCartPage;
+import SwagLabCartProject.Pages.FooterPage;
 import SwagLabCartProject.Pages.ItemListPage;
 import SwagLabCartProject.Pages.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -23,6 +24,7 @@ public class BasicTest {
     protected LoginPage loginPage;
     protected AddToCartPage addToCartPage;
     protected ItemListPage itemListPage;
+    protected FooterPage footerPage;
 
 
 
@@ -36,6 +38,7 @@ public class BasicTest {
         loginPage = new LoginPage(driver,wait);
         addToCartPage = new AddToCartPage(driver,wait);
         itemListPage = new ItemListPage(driver, wait);
+        footerPage = new FooterPage(driver, wait);
     }
 
     @BeforeMethod
