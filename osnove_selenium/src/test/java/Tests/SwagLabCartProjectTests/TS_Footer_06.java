@@ -1,7 +1,6 @@
 package Tests.SwagLabCartProjectTests;
 
 import SwagLabCartProject.Retry.SwagLabRetry;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -42,6 +41,16 @@ public class TS_Footer_06 extends  BasicTest {
         footerPage.switchToNewWidnow();
         Assert.assertEquals(driver.getCurrentUrl(),
                 "https://www.facebook.com/saucelabs",
+                "URL doesn't match expected URL");
+    }
+
+    @Test (priority = 6, retryAnalyzer = SwagLabRetry.class)
+    public void verifyIfTheLinkdinButtonIsWokring () {
+
+        footerPage.getLinkdinPage().click();
+        footerPage.switchToNewWidnow();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://www.linkedin.com/company/sauce-labs/",
                 "URL doesn't match expected URL");
     }
 
