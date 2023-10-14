@@ -54,6 +54,13 @@ public class TS_Footer_06 extends  BasicTest {
                 "URL doesn't match expected URL");
     }
 
+    @Test (priority = 6, retryAnalyzer = SwagLabRetry.class)
+    public void verifyTheCopyRightNoticeMessage () {
+
+        Assert.assertEquals(footerPage.getCopyRightMessageElement().getText(),
+                "© 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy",
+                "Actual text doesn't match expected text");
+    }
 
 
 

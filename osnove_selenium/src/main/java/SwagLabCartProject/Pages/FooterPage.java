@@ -24,4 +24,10 @@ public class FooterPage extends BasicPage {
     public void switchToNewWidnow () {
         driver.getWindowHandles().forEach(tab->driver.switchTo().window(tab));
     }
+
+    public WebElement getCopyRightMessageElement () {
+        return driver.findElement(By.cssSelector(".footer_copy"));
+    }
+
+
 }
