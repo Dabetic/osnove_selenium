@@ -8,11 +8,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import p02_10_2023.Helper;
 
+import java.io.IOException;
 import java.time.Duration;
 
 public class BasicTest {
@@ -52,8 +55,11 @@ public class BasicTest {
     }
 
     @AfterMethod
-    public void afterMethod() {
-
+    public void ifFails(ITestResult result) throws IOException {
+        if (result.getStatus() == ITestResult.FAILURE) {
+            Helper.takeAScreenshot(driver,
+                    "C:\\\\BootCamp IntelliJ Projekti\\\\osnove_selenium\\\\osnove_selenium\\\\screenshots\\\\greska.png");
+        }
     }
     @AfterClass
     public void afterClass() {
